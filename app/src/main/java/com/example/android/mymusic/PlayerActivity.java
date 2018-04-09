@@ -18,12 +18,12 @@ public class PlayerActivity extends AppCompatActivity { ;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.player_activity);
         Intent intent = getIntent();
-        ArrayList<Parcelable> song = intent.getExtras().getParcelableArrayList("song");
+        Word song = intent.getParcelableExtra("position");
 
-        ArrayList<Word> words = new ArrayList<Word>();
-
+        ArrayList<Word> selectedsong = new ArrayList<Word>();
+        selectedsong.add(song);
         TitleAdapter adapter =
-                new TitleAdapter(this, words);
+                new TitleAdapter (this,selectedsong);
 
         final ListView listView = (ListView) findViewById(R.id.list);
 

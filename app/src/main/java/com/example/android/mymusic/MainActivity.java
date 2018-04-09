@@ -3,6 +3,7 @@ package com.example.android.mymusic;
 import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.hardware.Sensor;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Create an ArrayList of words
+        Word song1 = new Word("Slowmotion", "Bensound", R.drawable.slowmotion);
+        Word song2 = new Word ("Funnysong", "Bensound", R.drawable.funnysong);
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("Slowmotion", "Bensound", R.drawable.slowmotion));
-        words.add(new Word("Funnysong", "Bensound", R.drawable.funnysong));
+        words.add(song1);
+        words.add(song2);
+
 
         TitleAdapter adapter =
                 new TitleAdapter(this, words);
@@ -39,14 +43,18 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapter, View v, int position,
                                     long arg3)
             {
+                Word currentWord=getItem(position);
                 Intent playerIntent = new Intent (MainActivity.this, PlayerActivity.class);
-                Word value = words.get(position);
-                playerIntent.putParcelableArrayListExtra("song", value);
+                playerIntent.putExtra("position", (Parcelable) currentWord);
                 startActivity(playerIntent);
 
-
             }
+
+                private Word getItem(int position) {
+                    return words.get(position);
+                }
         });
     }
+
 
 }
