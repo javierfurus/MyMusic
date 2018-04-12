@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Create an ArrayList of words
-        Word song1 = new Word("Slowmotion", "Bensound", R.drawable.slowmotion);
-        Word song2 = new Word ("Funnysong", "Bensound", R.drawable.funnysong);
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(song1);
-        words.add(song2);
+        words.add(new Word("Slowmotion", "Bensound", R.drawable.slowmotion, "4:30"));
+        words.add(new Word ("Funnysong", "Bensound", R.drawable.funnysong, "5:00"));
+        words.add(new Word ("A New Beginning", "Bensound", R.drawable.anewbeginning,"3:30"));
+        words.add(new Word ("Memories", "Bensound", R.drawable.memories,"4:30"));
+        words.add(new Word ("Little Idea", "Bensound", R.drawable.littleidea,"2:30"));
+        words.add(new Word ("Ukulele", "Bensound", R.drawable.ukulele,"6:25"));
 
 
         TitleAdapter adapter =

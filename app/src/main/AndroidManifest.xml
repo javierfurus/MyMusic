@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlayerActivity"
-            android:label="Player"/>
+            android:label="Player"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

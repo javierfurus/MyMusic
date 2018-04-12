@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/main_padding"
+    android:id="@+id/list_item">
+            <ImageView
+                android:id="@+id/album_art"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/player_cover_art_size"
+                android:adjustViewBounds="true"
+                tools:src="@drawable/ic_launcher_foreground"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:id="@+id/title_textview"
+                android:layout_width="match_parent"
+                tools:text="1st title"
+                android:padding="@dimen/player_item_padding"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_height="wrap_content"
+                android:id="@+id/artist_text_view"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/player_item_padding"
+                tools:text="one"/>
+</LinearLayout>

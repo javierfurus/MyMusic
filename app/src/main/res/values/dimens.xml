@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_padding">16dp</dimen>
+    <dimen name="bar_height">100dp</dimen>
+    <dimen name="bar_text_size">10dp</dimen>
+    <dimen name="pading_list_items">10dp</dimen>
+    <dimen name="player_item_padding">5dp</dimen>
+    <dimen name="cover_art_size">70dp</dimen>
+    <dimen name="player_cover_art_size">300dp</dimen>
+    <dimen name="list_item_text_size">20sp</dimen>
+    <dimen name="media_buttons_padding">20dp</dimen>
+    <dimen name="media_button_size">60dp</dimen>
+    <dimen name="seekbar_padding">10dp</dimen>
+</resources>

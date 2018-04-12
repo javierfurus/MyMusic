@@ -10,20 +10,23 @@ import java.util.ArrayList;
  */
 
 public class Word extends ArrayList<Parcelable> implements Parcelable {
-    private String mArtist;
     private String mTitle;
+    private String mArtist;
     private int mAlbumArt;
+    private String mSongLength;
 
-    public Word (String artist, String title, int albumArt) {
-        mArtist = artist;
+    public Word (String artist, String title, int albumArt, String songLength) {
         mTitle = title;
+        mArtist = artist;
         mAlbumArt = albumArt;
+        mSongLength = songLength;
     }
 
     protected Word(Parcel in) {
-        mArtist = in.readString();
         mTitle = in.readString();
+        mArtist = in.readString();
         mAlbumArt = in.readInt();
+        mSongLength = in.readString();
     }
 
     public static final Creator<Word> CREATOR = new Creator<Word>() {
@@ -39,15 +42,19 @@ public class Word extends ArrayList<Parcelable> implements Parcelable {
     };
 
     public String getArtist(){
-        return mArtist;
+        return mTitle;
     }
 
     public String getTitle() {
-        return mTitle;
+        return mArtist;
     }
 
     public int getAlbumArt() {
         return mAlbumArt;
+    }
+
+    public String getSongLength() {
+        return mSongLength;
     }
 
     @Override
@@ -57,8 +64,9 @@ public class Word extends ArrayList<Parcelable> implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(mArtist);
         parcel.writeString(mTitle);
+        parcel.writeString(mArtist);
         parcel.writeInt(mAlbumArt);
+        parcel.writeString(mSongLength);
     }
 }
