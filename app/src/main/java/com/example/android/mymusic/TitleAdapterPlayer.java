@@ -1,7 +1,6 @@
 package com.example.android.mymusic;
 
 import android.app.Activity;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,18 +25,18 @@ public class TitleAdapterPlayer extends ArrayAdapter<Word> {
                     R.layout.player_list_item, parent, false
             );
         }
-        Word currentWord=getItem(position);
+        Word currentWord = getItem(position);
 
         //get miwok word
-        TextView songtitle = (TextView) listViewItem.findViewById(R.id.title_textview);
+        TextView songtitle = listViewItem.findViewById(R.id.title_textview);
         songtitle.setText(currentWord.getTitle());
 
         //get default translation word
-        TextView artist = (TextView) listViewItem.findViewById(R.id.artist_text_view);
+        TextView artist = listViewItem.findViewById(R.id.artist_text_view);
         artist.setText(currentWord.getArtist());
 
         //get albumart
-        ImageView albumart = (ImageView) listViewItem.findViewById(R.id.album_art);
+        ImageView albumart = listViewItem.findViewById(R.id.album_art);
         albumart.setImageResource(currentWord.getAlbumArt());
 
 

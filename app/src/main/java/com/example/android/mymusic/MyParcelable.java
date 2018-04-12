@@ -3,15 +3,23 @@ package com.example.android.mymusic;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.List;
+public class MyParcelable implements Parcelable {
+    public static final Creator<MyParcelable> CREATOR = new Creator<MyParcelable>() {
+        @Override
+        public MyParcelable createFromParcel(Parcel in) {
+            return new MyParcelable(in);
+        }
 
-public class MyParcelable implements Parcelable{
+        @Override
+        public MyParcelable[] newArray(int size) {
+            return new MyParcelable[size];
+        }
+    };
     private String mArtist;
     private String mTitle;
     private int mAlbumArt;
 
-    public MyParcelable (String artist, String title, int albumArt) {
+    public MyParcelable(String artist, String title, int albumArt) {
         mArtist = artist;
         mTitle = title;
         mAlbumArt = albumArt;
@@ -23,19 +31,7 @@ public class MyParcelable implements Parcelable{
         mAlbumArt = in.readInt();
     }
 
-    public static final Creator<MyParcelable> CREATOR = new Creator<MyParcelable>() {
-        @Override
-        public MyParcelable createFromParcel (Parcel in) {
-            return new MyParcelable (in);
-        }
-
-        @Override
-        public MyParcelable[] newArray(int size) {
-            return new MyParcelable[size];
-        }
-    };
-
-    public String getArtist(){
+    public String getArtist() {
         return mArtist;
     }
 

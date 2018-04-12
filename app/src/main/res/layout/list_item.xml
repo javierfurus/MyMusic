@@ -1,44 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
     <ImageView
         android:id="@+id/album_art"
-        android:layout_weight="0"
         android:layout_width="@dimen/cover_art_size"
         android:layout_height="@dimen/cover_art_size"
+        android:layout_weight="0"
         android:adjustViewBounds="true"
-        tools:src="@drawable/ic_launcher_foreground"/>
-        <LinearLayout
+        tools:src="@drawable/ic_launcher_foreground" />
+
+    <LinearLayout
+        android:id="@+id/list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/list_item">
-            <TextView
-                android:layout_weight="1"
-                android:paddingTop="@dimen/pading_list_items"
-                android:paddingStart="@dimen/pading_list_items"
-                android:layout_height="wrap_content"
-                android:id="@+id/title_textview"
-                android:layout_width="match_parent"
-                android:gravity="bottom"
-                android:textSize="@dimen/list_item_text_size"
-                tools:text="1st title"/>
+            android:gravity="bottom"
+            android:paddingStart="@dimen/pading_list_items"
+            android:paddingTop="@dimen/pading_list_items"
+            android:textSize="@dimen/list_item_text_size"
+            tools:text="1st title" />
 
-            <TextView
-                android:layout_weight="1"
-                android:paddingStart="@dimen/pading_list_items"
-                android:paddingBottom="@dimen/pading_list_items"
-                android:layout_height="wrap_content"
-                android:id="@+id/artist_text_view"
-                android:layout_width="match_parent"
-                android:gravity="top"
-                android:textSize="@dimen/list_item_text_size"
-                tools:text="one"/>
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/artist_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:paddingBottom="@dimen/pading_list_items"
+            android:paddingStart="@dimen/pading_list_items"
+            android:textSize="@dimen/list_item_text_size"
+            tools:text="one" />
     </LinearLayout>
+
+</LinearLayout>

@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PlayerActivity extends AppCompatActivity { ;
+public class PlayerActivity extends AppCompatActivity {
+    ;
     boolean buttonIsClicked;
     ImageView playButton;
 
@@ -22,18 +22,18 @@ public class PlayerActivity extends AppCompatActivity { ;
         setContentView(R.layout.player_activity);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         LinearLayout view = findViewById(R.id.seekBarLinearLayout);
-        TextView length = (TextView) view.findViewById(R.id.songend);
-        playButton = (ImageView) findViewById(R.id.playButton);
-        buttonIsClicked=false;
+        TextView length = view.findViewById(R.id.songend);
+        playButton = findViewById(R.id.playButton);
+        buttonIsClicked = false;
         Intent intent = getIntent();
         Word song = intent.getParcelableExtra("position");
 
         ArrayList<Word> selectedsong = new ArrayList<Word>();
         selectedsong.add(song);
         TitleAdapterPlayer adapter =
-                new TitleAdapterPlayer (this,selectedsong);
+                new TitleAdapterPlayer(this, selectedsong);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
 
         listView.setAdapter(adapter);
         listView.setEnabled(false);
@@ -42,13 +42,12 @@ public class PlayerActivity extends AppCompatActivity { ;
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (buttonIsClicked==false){
+                if (buttonIsClicked == false) {
                     playButton.setImageResource(R.drawable.ic_play_arrow);
-                    buttonIsClicked=true;
-                }
-                else if (buttonIsClicked){
+                    buttonIsClicked = true;
+                } else if (buttonIsClicked) {
                     playButton.setImageResource(R.drawable.ic_pause);
-                    buttonIsClicked=false;
+                    buttonIsClicked = false;
                 }
             }
         });
@@ -56,6 +55,7 @@ public class PlayerActivity extends AppCompatActivity { ;
         length.setText(song.getSongLength().toString());
 
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -66,8 +66,8 @@ public class PlayerActivity extends AppCompatActivity { ;
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        buttonIsClicked=savedInstanceState.getBoolean("isPressed");
-        if (buttonIsClicked){
+        buttonIsClicked = savedInstanceState.getBoolean("isPressed");
+        if (buttonIsClicked) {
             playButton.setImageResource(R.drawable.ic_pause);
         }
 

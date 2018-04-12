@@ -1,79 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".PlayerActivity">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
-<ListView
-    android:layout_centerVertical="true"
-    android:id="@+id/list"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-</ListView>
-</RelativeLayout>
-<LinearLayout android:layout_weight="0"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:id="@+id/seekBarLinearLayout"
-android:orientation="horizontal"
-android:padding="@dimen/seekbar_padding"
-android:gravity="center"
-android:background="@android:color/white">
-<TextView
-    android:layout_weight="0"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:text="0:00"/>
-<SeekBar
-    android:id="@+id/seekbar"
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-<TextView
-    android:id="@+id/songend"
-    android:layout_weight="0"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:text="0:00"/>
-</LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/seekBarLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/seekbar_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:text="0:00" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/songend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:text="0:00" />
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/mediabuttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
         android:orientation="horizontal"
         android:paddingBottom="@dimen/media_buttons_padding"
-        android:paddingTop="@dimen/media_buttons_padding"
-        android:gravity="center"
-        android:background="@android:color/white">
+        android:paddingTop="@dimen/media_buttons_padding">
+
         <ImageView
             android:layout_width="@dimen/media_button_size"
             android:layout_height="@dimen/media_button_size"
-            android:src="@drawable/ic_skip_previous"/>
+            android:src="@drawable/ic_skip_previous" />
+
         <ImageView
             android:layout_width="@dimen/media_button_size"
             android:layout_height="@dimen/media_button_size"
-            android:src="@drawable/ic_fast_rewind"/>
+            android:src="@drawable/ic_fast_rewind" />
+
         <ImageView
-            android:layout_width="@dimen/media_button_size"
-            android:layout_height="@dimen/media_button_size"
             android:id="@+id/playButton"
-            android:src="@drawable/ic_play_arrow"
+            android:layout_width="@dimen/media_button_size"
+            android:layout_height="@dimen/media_button_size"
             android:focusableInTouchMode="false"
-            />
+            android:src="@drawable/ic_play_arrow" />
+
         <ImageView
             android:layout_width="@dimen/media_button_size"
             android:layout_height="@dimen/media_button_size"
-            android:src="@drawable/ic_fast_forward"/>
+            android:src="@drawable/ic_fast_forward" />
+
         <ImageView
             android:layout_width="@dimen/media_button_size"
             android:layout_height="@dimen/media_button_size"
-            android:src="@drawable/ic_skip_next"/>
+            android:src="@drawable/ic_skip_next" />
     </LinearLayout>
 </LinearLayout>
